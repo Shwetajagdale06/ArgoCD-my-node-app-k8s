@@ -1,9 +1,7 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app
-  labels:
-    app: my-app
 spec:
   replicas: 1
   selector:
@@ -15,7 +13,7 @@ spec:
         app: my-app
     spec:
       containers:
-        - name: my-app
-          image: shweta064/my-node-app:latest
-          ports:
-            - containerPort: 3000
+      - name: my-app
+        image: shweta064/argocd-my-node-app:latest
+        ports:
+        - containerPort: 3000
